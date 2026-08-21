@@ -40,7 +40,7 @@ export default function Navbar() {
           </Link>
           
           <Link 
-            href="/contact" 
+            href="/Contact" 
             className={`transition ${
               pathname === '/contact' 
                 ? 'text-[#D39B36] font-bold' 
