@@ -56,6 +56,9 @@ export default function Navbar() {
               Contact
             </Link>
 
+
+
+
             <Link
               href="/Products"
               className={`transition ${
@@ -77,6 +80,18 @@ export default function Navbar() {
             >
               About Us
             </Link>
+
+<Link
+              href="/gk"
+              className={`transition ${
+                pathname === "/gk"
+                  ? "text-[#D39B36] font-bold"
+                  : "text-[#0A2249] font-semibold hover:text-[#D39B36]"
+              }`}
+            >
+              Gk Resources
+            </Link>
+            
           </nav>
 
           {/* Hamburger Button */}
@@ -141,6 +156,19 @@ export default function Navbar() {
                 }`}
               >
                 About Us
+              </Link>
+
+
+              <Link
+                href="/Products"
+                onClick={() => setMenuOpen(false)}
+                className={`px-4 py-3 rounded-lg ${
+                  pathname === "/Products"
+                    ? "bg-gray-50 text-[#D39B36] font-bold"
+                    : "text-[#0A2249] font-semibold hover:bg-gray-50"
+                }`}
+              >
+                Our Products
               </Link>
 
             </nav>
