@@ -134,17 +134,7 @@ export default function Navbar() {
                 Contact
               </Link>
 
-              <Link
-                href="/Products"
-                onClick={() => setMenuOpen(false)}
-                className={`px-4 py-3 rounded-lg ${
-                  pathname === "/Products"
-                    ? "bg-gray-50 text-[#D39B36] font-bold"
-                    : "text-[#0A2249] font-semibold hover:bg-gray-50"
-                }`}
-              >
-                Our Products
-              </Link>
+             
 
               <Link
                 href="/About"
@@ -169,6 +159,19 @@ export default function Navbar() {
                 }`}
               >
                 Our Products
+              </Link>
+
+
+ <Link
+                href="/gk"
+                onClick={() => setMenuOpen(false)}
+                className={`px-4 py-3 rounded-lg ${
+                  pathname === "/gk"
+                    ? "bg-gray-50 text-[#D39B36] font-bold"
+                    : "text-[#0A2249] font-semibold hover:bg-gray-50"
+                }`}
+              >
+               GK Resources
               </Link>
 
             </nav>
