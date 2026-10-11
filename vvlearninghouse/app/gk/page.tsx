@@ -69,20 +69,9 @@ export default function GKComingSoonPage() {
 
           {/* LINKS */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-            <Link
-              href="/"
-              className="inline-flex items-center space-x-2 text-[#0A2249] font-semibold hover:text-[#D39B36] transition"
-            >
-              <ArrowLeft size={18} />
-              <span>Back to Home</span>
-            </Link>
+            
             <span className="hidden sm:block text-slate-300">|</span>
-            <Link
-              href="/contact"
-              className="text-[#0A2249] font-semibold hover:text-[#D39B36] transition"
-            >
-              Have a question? Contact us
-            </Link>
+            
           </div>
 
         </div>
