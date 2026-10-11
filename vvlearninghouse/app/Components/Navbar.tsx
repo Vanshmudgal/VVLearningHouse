@@ -17,23 +17,23 @@ export default function Navbar() {
         <div className="h-20 flex items-center justify-between">
 
           {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center gap-2 sm:gap-3"
-            onClick={() => setMenuOpen(false)}
-          >
-            <Image
-              src="/vvlearning.png"
-              alt="V V Learning House"
-              width={50}
-              height={50}
-              className="w-10 h-10 sm:w-[50px] sm:h-[50px]"
-            />
+         
+{/* Logo */}
+<Link
+  href="/"
+  className="flex items-center shrink-0"
+  onClick={() => setMenuOpen(false)}
+>
+  <Image
+    src="/vvlearninghouse.png"
+    alt="V V Learning House - Education Solutions"
+    width={420}
+    height={120}
+    priority
+    className="w-[220px] sm:w-[280px] h-auto object-contain"
+  />
+</Link>
 
-            <h1 className="text-lg sm:text-2xl font-bold text-[#0A2249] tracking-wide uppercase">
-              V V Learning House
-            </h1>
-          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
@@ -57,6 +57,30 @@ export default function Navbar() {
               }`}
             >
               Contact
+            </Link>
+
+
+             <Link
+              href="/Products"
+              className={`transition ${
+                pathname === "/Products"
+                  ? "text-[#D39B36] font-bold"
+                  : "text-[#0A2249] font-semibold hover:text-[#D39B36]"
+              }`}
+            >
+              Our Products
+            </Link>
+
+
+             <Link
+              href="/About"
+              className={`transition ${
+                pathname === "/About"
+                  ? "text-[#D39B36] font-bold"
+                  : "text-[#0A2249] font-semibold hover:text-[#D39B36]"
+              }`}
+            >
+              About Us
             </Link>
           </nav>
 
