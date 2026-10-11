@@ -80,7 +80,7 @@ export default function AboutUsPage() {
                 <div className="p-3 bg-white">
                   <div className="relative aspect-[4/5] w-full overflow-hidden rounded-md bg-slate-100 ring-1 ring-slate-200">
                     <Image
-                      src="/director.jpeg"
+                      src="/director3.png"
                       alt="Lalit Sharma, Director Sales at V V Learning House"
                       fill
                       sizes="(max-width: 768px) 100vw, 40vw"
@@ -118,7 +118,7 @@ export default function AboutUsPage() {
                 </p>
                 <p>
                   As Director Sales at V V Learning House, he leads the company's sales and its
-                  relationships with schools across the country. His deep understanding of the
+                  relationships with schools across the country and Gulf . His deep understanding of the
                   education industry and the school ecosystem helps ensure that our solutions
                   reach the right classrooms and meet the real needs of students and teachers.
                 </p>
