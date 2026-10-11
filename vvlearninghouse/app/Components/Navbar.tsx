@@ -17,23 +17,20 @@ export default function Navbar() {
         <div className="h-20 flex items-center justify-between">
 
           {/* Logo */}
-         
-{/* Logo */}
-<Link
-  href="/"
-  className="flex items-center shrink-0"
-  onClick={() => setMenuOpen(false)}
->
-  <Image
-    src="/vvlearninghouse.png"
-    alt="V V Learning House - Education Solutions"
-    width={420}
-    height={120}
-    priority
-    className="w-[220px] sm:w-[280px] h-auto object-contain"
-  />
-</Link>
-
+          <Link
+            href="/"
+            className="flex items-center shrink-0"
+            onClick={() => setMenuOpen(false)}
+          >
+            <Image
+              src="/vvlearninghouse.png"
+              alt="V V Learning House - Education Solutions"
+              width={420}
+              height={120}
+              priority
+              className="w-[220px] sm:w-[280px] h-auto object-contain"
+            />
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
@@ -59,8 +56,7 @@ export default function Navbar() {
               Contact
             </Link>
 
-
-             <Link
+            <Link
               href="/Products"
               className={`transition ${
                 pathname === "/Products"
@@ -71,8 +67,7 @@ export default function Navbar() {
               Our Products
             </Link>
 
-
-             <Link
+            <Link
               href="/About"
               className={`transition ${
                 pathname === "/About"
@@ -122,6 +117,30 @@ export default function Navbar() {
                 }`}
               >
                 Contact
+              </Link>
+
+              <Link
+                href="/Products"
+                onClick={() => setMenuOpen(false)}
+                className={`px-4 py-3 rounded-lg ${
+                  pathname === "/Products"
+                    ? "bg-gray-50 text-[#D39B36] font-bold"
+                    : "text-[#0A2249] font-semibold hover:bg-gray-50"
+                }`}
+              >
+                Our Products
+              </Link>
+
+              <Link
+                href="/About"
+                onClick={() => setMenuOpen(false)}
+                className={`px-4 py-3 rounded-lg ${
+                  pathname === "/About"
+                    ? "bg-gray-50 text-[#D39B36] font-bold"
+                    : "text-[#0A2249] font-semibold hover:bg-gray-50"
+                }`}
+              >
+                About Us
               </Link>
 
             </nav>
