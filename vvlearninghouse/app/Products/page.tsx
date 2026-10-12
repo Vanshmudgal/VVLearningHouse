@@ -131,15 +131,25 @@ export default function OurProductsPage() {
       </section>
 
       {/* CALL TO ACTION */}
-      
+      <section className="py-20 bg-white border-t border-slate-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h3 className="text-3xl font-bold text-[#0A2249] mb-6">
+            Want samples or bulk orders for your school?
+          </h3>
+          <p className="text-slate-600 mb-8 text-lg">
+            Get in touch with us and we will be happy to help you choose the right books.
+          </p>
+          <Link
+            href="/Contact"
+            className="inline-block bg-[#D39B36] hover:bg-[#b8852d] text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 text-lg"
+          >
+            Contact Us Now
+          </Link>
+        </div>
+      </section>
 
       {/* FOOTER */}
-      <footer className="bg-[#051329] py-8 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
-          <p>&copy; {new Date().getFullYear()} V V Learning House. All Rights Reserved.</p>
-          <p className="mt-2 md:mt-0">A BioFuture Life Sciences Brand</p>
-        </div>
-      </footer>
+     
     </div>
   );
 }

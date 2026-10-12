@@ -297,11 +297,7 @@ export default function ContactPage() {
       </main>
 
       {/* FOOTER */}
-      <footer className="bg-[#051329] py-8 border-t border-slate-800 mt-auto">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
-          <p>&copy; {new Date().getFullYear()} V V Learning House. All Rights Reserved.</p>
-        </div>
-      </footer>
+    
 
     </div>
   );

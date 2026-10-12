@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Components/Navbar";
-import { Analytics } from "@vercel/analytics/next"; // added
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,8 +35,20 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <Navbar />
-        {children}
-        <Analytics /> {/* added */}
+
+        <main className="flex-1">{children}</main>
+
+        <footer className="bg-[#051329] py-8 border-t border-slate-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+            <p>
+              &copy; {new Date().getFullYear()} V V Learning House. All Rights
+              Reserved.
+            </p>
+            <p className="mt-2 md:mt-0">A BioFuture Life Sciences Brand</p>
+          </div>
+        </footer>
+
+        <Analytics />
       </body>
     </html>
   );
