@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Phone, Mail, MapPin, Send, ChevronDown } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, ChevronDown, CheckCircle2, X } from 'lucide-react';
 
 const COUNTRIES = [
   {
@@ -51,7 +51,24 @@ export default function ContactPage() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  // Success toast
+  const [toast, setToast] = useState({ show: false, name: '' });
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const country = COUNTRIES.find((c) => c.code === countryCode) ?? COUNTRIES[0];
+
+  const showToast = (name: string) => {
+    if (toastTimer.current) clearTimeout(toastTimer.current);
+    setToast({ show: true, name });
+    toastTimer.current = setTimeout(() => setToast((t) => ({ ...t, show: false })), 5000);
+  };
+
+  // Clear toast timer on unmount
+  useEffect(() => {
+    return () => {
+      if (toastTimer.current) clearTimeout(toastTimer.current);
+    };
+  }, []);
 
   // Close dropdown on outside click or Escape
   useEffect(() => {
@@ -79,7 +96,7 @@ export default function ContactPage() {
       phone: `${country.dial}${formData.phone}`,
       country: country.name,
     });
-    alert('Thank you for your inquiry! We will get back to you soon.');
+    showToast(formData.name.split(' ')[0]);
     setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
@@ -141,21 +158,21 @@ export default function ContactPage() {
                     <div className="flex">
 
                       {/* Custom country dropdown with real flags */}
-                      <div className="relative" ref={dropdownRef}>
+                      <div className="relative shrink-0" ref={dropdownRef}>
                         <button
                           type="button"
                           onClick={() => setDropdownOpen((o) => !o)}
                           aria-haspopup="listbox"
                           aria-expanded={dropdownOpen}
                           aria-label="Select country"
-                          className="h-full flex items-center gap-2 px-3 rounded-l-lg border border-r-0 border-slate-300 bg-slate-100 text-slate-700 font-medium outline-none focus:ring-2 focus:ring-[#D39B36] hover:bg-slate-200 transition"
+                          className="h-full flex items-center gap-2 px-3 whitespace-nowrap rounded-l-lg border border-r-0 border-slate-300 bg-slate-100 text-slate-700 font-medium outline-none focus:ring-2 focus:ring-[#D39B36] hover:bg-slate-200 transition"
                         >
-                          <Flag code={country.code} />
-                          <span>{country.dial}</span>
                           <ChevronDown
-                            size={16}
-                            className={`text-slate-500 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`}
+                            size={14}
+                            className={`shrink-0 text-slate-500 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`}
                           />
+                          <Flag code={country.code} className="shrink-0" />
+                          <span>{country.dial}</span>
                         </button>
 
                         {dropdownOpen && (
@@ -297,7 +314,46 @@ export default function ContactPage() {
       </main>
 
       {/* FOOTER */}
-    
+
+
+      {/* SUCCESS TOAST */}
+      <div
+        role="status"
+        aria-live="polite"
+        className={`fixed top-6 right-4 sm:right-6 z-50 w-[calc(100%-2rem)] max-w-sm transition-all duration-300 ${
+          toast.show ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="relative overflow-hidden bg-white rounded-xl shadow-2xl border border-slate-100 p-4 flex items-start gap-3">
+          <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center flex-shrink-0">
+            <CheckCircle2 className="text-emerald-500" size={22} />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="font-bold text-[#0A2249]">
+              {toast.name ? `Thank you, ${toast.name}!` : 'Message sent!'}
+            </p>
+            <p className="text-sm text-slate-500 mt-0.5">
+              Your inquiry has been received. We will get back to you soon.
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => setToast((t) => ({ ...t, show: false }))}
+            aria-label="Close notification"
+            className="text-slate-400 hover:text-slate-600 transition"
+          >
+            <X size={18} />
+          </button>
+          {/* Auto-dismiss progress bar */}
+          <div className="absolute bottom-0 left-0 h-1 w-full bg-slate-100">
+            <div
+              className={`h-full bg-[#D39B36] ease-linear transition-[width] ${
+                toast.show ? 'w-0 duration-[5000ms]' : 'w-full duration-0'
+              }`}
+            />
+          </div>
+        </div>
+      </div>
 
     </div>
   );
