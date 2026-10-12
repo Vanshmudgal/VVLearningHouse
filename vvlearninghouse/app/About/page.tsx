@@ -110,7 +110,7 @@ export default function AboutUsPage() {
                 <div className="p-3 bg-white">
                   <div className="relative aspect-[4/5] w-full overflow-hidden rounded-md bg-slate-100 ring-1 ring-slate-200">
                     <Image
-                      src="/director.jpeg"
+                      src="/director3.png"
                       alt="Lalit Sharma, Director – Sales at V V Learning House"
                       fill
                       sizes="(max-width: 768px) 100vw, 40vw"
