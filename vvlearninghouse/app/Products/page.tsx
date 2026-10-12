@@ -5,21 +5,21 @@ import { BookOpen } from 'lucide-react';
 
 export const metadata = {
   metadataBase: new URL('https://vvlearninghouse.in'),
-  title: 'School Books for Class 1 to 8 | V V Learning House',
+  title: 'Our Products | Textbooks for Classes 1–8 | V V Learning House',
   description:
-    'Curriculum-based school books for Class 1 to Class 8 by V V Learning House. Request samples and bulk orders for your school.',
+    'Curriculum-aligned textbooks for Classes 1–8 by V V Learning House, developed with academic care and an understanding of how young minds learn. Explore our publications or request samples for your school.',
   keywords: [
     'V V Learning House',
     'school books',
     'Class 1 to 8 books',
-    'school book publisher',
-    'curriculum based books',
+    'school textbooks',
+    'curriculum aligned textbooks',
   ],
-  alternates: { canonical: '/products' },
+  alternates: { canonical: '/Products' },
   openGraph: {
     title: 'Our Products | V V Learning House',
-    description: 'Quality school books for Class 1 to Class 8.',
-    url: '/products',
+    description: 'Curriculum-aligned textbooks for Classes 1–8.',
+    url: '/Products',
     siteName: 'V V Learning House',
     images: ['/class1.jpeg'],
     type: 'website',
@@ -42,7 +42,7 @@ const products = [
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'School Books by V V Learning House',
+  name: 'Textbooks by V V Learning House',
   itemListElement: products.map((item, index) => ({
     '@type': 'ListItem',
     position: index + 1,
@@ -77,11 +77,16 @@ export default function OurProductsPage() {
           <div className="w-14 h-14 bg-[#D39B36] rounded-full flex items-center justify-center mb-5 shadow-lg">
             <BookOpen className="text-[#0A2249]" size={28} />
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight">
-            Our <span className="text-[#D39B36]">Products</span>
+          <p className="text-sm font-bold uppercase tracking-[0.3em] text-[#D39B36] mb-4">
+            Our Products
+          </p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-5 leading-tight">
+            The Right Books. <br className="hidden sm:block" />
+            <span className="text-[#D39B36]">A Stronger Foundation.</span>
           </h1>
           <p className="text-lg md:text-xl text-slate-200 max-w-2xl">
-            Quality school books for Class 1 to Class 8, crafted to make learning engaging and joyful.
+            Curriculum-aligned textbooks for Classes 1–8, developed with academic care and an
+            understanding of how young minds learn.
           </p>
         </div>
       </section>
@@ -90,12 +95,18 @@ export default function OurProductsPage() {
       <section className="py-16 -mt-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#0A2249]">Our Book Collection</h2>
+            <h2 className="text-3xl font-bold text-[#0A2249]">
+              Discover the V V Learning House Collection
+            </h2>
             <div className="w-20 h-1 bg-[#D39B36] mx-auto mt-3 rounded-full"></div>
             <p className="text-slate-600 max-w-3xl mx-auto mt-6 text-lg">
-              V V Learning House publishes curriculum-based school books for Class 1 to Class 8,
-              written by experienced educators with engaging illustrations and activities. Browse
-              our collection and contact us for samples or bulk orders for your school.
+              Our collection brings together the expertise of experienced educators and
+              thoughtfully structured learning content. With illustrations that support
+              comprehension and activities that reinforce key concepts, our books are designed for
+              meaningful classroom learning.
+            </p>
+            <p className="text-slate-600 max-w-3xl mx-auto mt-4 text-lg font-medium">
+              Explore our publications or request samples for your school.
             </p>
           </div>
 
@@ -109,7 +120,7 @@ export default function OurProductsPage() {
                 <div className="relative aspect-[3/4] bg-slate-100 overflow-hidden">
                   <Image
                     src={item.image}
-                    alt={`V V Learning House ${item.title} school book cover`}
+                    alt={`V V Learning House ${item.title} textbook cover`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -131,25 +142,9 @@ export default function OurProductsPage() {
       </section>
 
       {/* CALL TO ACTION */}
-      <section className="py-20 bg-white border-t border-slate-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-3xl font-bold text-[#0A2249] mb-6">
-            Want samples or bulk orders for your school?
-          </h3>
-          <p className="text-slate-600 mb-8 text-lg">
-            Get in touch with us and we will be happy to help you choose the right books.
-          </p>
-          <Link
-            href="/Contact"
-            className="inline-block bg-[#D39B36] hover:bg-[#b8852d] text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 text-lg"
-          >
-            Contact Us Now
-          </Link>
-        </div>
-      </section>
-
+      
       {/* FOOTER */}
-     
+
     </div>
   );
 }

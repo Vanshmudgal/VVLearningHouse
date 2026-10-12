@@ -4,14 +4,14 @@ import Image from 'next/image';
 
 export const metadata = {
   metadataBase: new URL('https://vvlearninghouse.in'),
-  title: 'About Us | V V Learning House – Education Solutions Company',
+  title: 'About Us | V V Learning House – Educational Publishing for Classes 1–8',
   description:
-    'V V Learning House is an education solutions company creating curriculum-based learning material for Class 1 to Class 8, led by Lalit Sharma, Director Sales, with 30+ years of experience.',
-  alternates: { canonical: '/about' },
+    'V V Learning House is an educational publishing company developing thoughtfully crafted learning resources for Classes 1–8. Led by Lalit Sharma, Director – Sales, with 30+ years of experience in educational publishing.',
+  alternates: { canonical: '/About' },
   openGraph: {
     title: 'About Us | V V Learning House',
-    description: 'An education solutions company backed by 30+ years of industry experience.',
-    url: '/about',
+    description: 'Good Education Deserves Great Thinking. Educational publications for Classes 1–8.',
+    url: '/About',
     siteName: 'V V Learning House',
     images: ['/director.jpeg'],
     type: 'website',
@@ -36,33 +36,63 @@ export default function AboutUsPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight">
             About <span className="text-[#D39B36]">Us</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-200 max-w-2xl">
-            An education solutions company dedicated to creating engaging, educational and
-            inspiring learning material for school children.
+          <p className="text-xl md:text-2xl text-slate-200 max-w-2xl font-medium">
+            Good Education Deserves Great Thinking.
+          </p>
+        </div>
+      </section>
+
+      {/* INTRO */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-slate-600 text-lg leading-relaxed mb-5">
+            At V V Learning House, we believe the value of a textbook lies in what a student takes
+            away from it. Every concept understood, every question explored, and every new
+            perspective gained contributes to a stronger foundation for learning.
+          </p>
+          <p className="text-slate-600 text-lg leading-relaxed">
+            We bring this belief to life through thoughtfully developed educational publications
+            for Classes 1–8, combining academic expertise with a considered approach to content,
+            illustrations, and classroom engagement.
           </p>
         </div>
       </section>
 
       {/* WHO WE ARE */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-slate-50 border-t border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-[#0A2249]">Who We Are</h2>
-          <div className="w-20 h-1 bg-[#D39B36] mx-auto mt-3 mb-8 rounded-full"></div>
-          <p className="text-slate-600 text-lg leading-relaxed mb-4">
-            V V Learning House is an education solutions company creating quality learning
-            material for K-8. Our offerings are designed to align with school
-            curriculums and educational standards, with engaging illustrations and activities that
-            make learning enjoyable for children of all ages.
-          </p>
-          <p className="text-slate-600 text-lg leading-relaxed">
-            Our content is created by experienced educators and subject matter experts, so that
-            everything we offer is useful for teachers in the classroom and for students at home.
-          </p>
+          <div className="w-20 h-1 bg-[#D39B36] mx-auto mt-3 mb-6 rounded-full"></div>
+          <h3 className="text-xl md:text-2xl font-semibold text-[#D39B36] mb-8">
+            A Publishing House That Understands the Classroom
+          </h3>
+
+          <div className="space-y-5 text-slate-600 text-lg leading-relaxed">
+            <p>
+              V V Learning House is an educational publishing company committed to developing
+              learning resources that serve the evolving needs of schools, educators, and students.
+            </p>
+            <p>
+              Our publications are developed by experienced educators and subject-matter experts,
+              with careful attention to curriculum requirements, conceptual clarity, and
+              age-appropriate learning experiences.
+            </p>
+            <p>
+              We recognise that a textbook has two equally important responsibilities: to support
+              the teacher delivering the lesson and to help the student understand it. This
+              understanding informs our approach to content development, from the way concepts are
+              introduced to the illustrations and activities that reinforce them.
+            </p>
+            <p>
+              Our focus remains on creating books that educators can confidently bring into their
+              classrooms and students can meaningfully engage with, both at school and at home.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* DIRECTOR SECTION */}
-      <section className="py-20 bg-slate-50 border-t border-slate-200">
+      {/* LEADERSHIP */}
+      <section className="py-20 bg-white border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-[#0A2249]">Leadership</h2>
@@ -80,8 +110,8 @@ export default function AboutUsPage() {
                 <div className="p-3 bg-white">
                   <div className="relative aspect-[4/5] w-full overflow-hidden rounded-md bg-slate-100 ring-1 ring-slate-200">
                     <Image
-                      src="/director3.png"
-                      alt="Lalit Sharma, Director Sales at V V Learning House"
+                      src="/director.jpeg"
+                      alt="Lalit Sharma, Director – Sales at V V Learning House"
                       fill
                       sizes="(max-width: 768px) 100vw, 40vw"
                       className="object-cover"
@@ -94,7 +124,7 @@ export default function AboutUsPage() {
                 <figcaption className="bg-[#0A2249] px-6 py-5 text-center border-t-4 border-[#D39B36]">
                   <p className="text-xl font-bold text-white tracking-wide">Lalit Sharma</p>
                   <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D39B36] mt-1">
-                    Director Sales
+                    Director – Sales
                   </p>
                 </figcaption>
               </figure>
@@ -102,87 +132,66 @@ export default function AboutUsPage() {
 
             {/* CONTENT */}
             <div className="md:col-span-3 mt-8 md:mt-0">
-              <span className="inline-block bg-[#0A2249] text-[#D39B36] text-sm font-bold px-4 py-1 rounded-full mb-4">
-                30+ Years of Experience
-              </span>
-              <h3 className="text-2xl md:text-3xl font-bold text-[#0A2249] mb-5">
-                Lalit Sharma, Director Sales
+              <h3 className="text-2xl md:text-3xl font-bold text-[#0A2249] mb-6">
+                Three Decades of Experience. A Deep Understanding of School Education.
               </h3>
 
               <div className="space-y-4 text-slate-600 text-lg leading-relaxed">
                 <p>
-                  Lalit Sharma brings over three decades of hands-on experience in school
-                  education publishing and sales. Having spent his career working closely with
-                  schools, teachers and educators, he understands first-hand what classrooms need
-                  and what makes a learning resource truly useful for a child.
+                  With over 30 years of experience in educational publishing and sales, Lalit
+                  Sharma brings extensive industry knowledge and a longstanding understanding of
+                  the school education ecosystem.
                 </p>
                 <p>
-                  As Director Sales at V V Learning House, he leads the company's sales and its
-                  relationships with schools across the country. His deep understanding of the
-                  education industry and the school ecosystem helps ensure that our solutions
-                  reach the right classrooms and meet the real needs of students and teachers.
+                  Throughout his career, he has worked closely with schools, teachers, and
+                  education professionals, developing a practical understanding of curriculum
+                  expectations, classroom requirements, and the factors that influence the
+                  selection of educational resources.
                 </p>
                 <p>
+                  As Director – Sales at V V Learning House, he leads the company&apos;s sales
+                  strategy and institutional relationships across India and the Gulf region. His
+                  experience informs the company&apos;s approach to school partnerships, ensuring
+                  that conversations are grounded in the academic and operational priorities of
+                  educational institutions.
+                </p>
+                <p>
+                  He believes that meaningful partnerships are built through a thorough
+                  understanding of the institutions they serve, consistent engagement, and a
+                  commitment to delivering long-term value.
+                </p>
+                <p className="font-medium text-[#0A2249]">
                   His leadership reflects a straightforward principle: understand the classroom,
                   respect the educator, and ensure that every school partnership is built on
                   trust.
                 </p>
               </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
-                {[
-                  { title: '30+ Years', desc: 'Industry experience' },
-                  { title: 'Publishing', desc: 'School education' },
-                  { title: 'Sales', desc: 'School partnerships' },
-                ].map((item) => (
-                  <div
-                    key={item.title}
-                    className="bg-white rounded-xl p-4 text-center shadow-sm hover:shadow-md transition border border-slate-100 border-t-4 border-t-[#D39B36]"
-                  >
-                    <p className="text-xl font-extrabold text-[#0A2249]">{item.title}</p>
-                    <p className="text-sm text-slate-500">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
             </div>
+          </div>
+
+          {/* HIGHLIGHTS */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16">
+            {[
+              { title: '30+ Years', desc: 'Experience in Educational Publishing' },
+              { title: 'India & Gulf Region', desc: 'Institutional Relationships' },
+              { title: 'School Partnerships', desc: 'Sales & Relationship Leadership' },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition border border-slate-100 border-t-4 border-t-[#D39B36]"
+              >
+                <p className="text-2xl font-extrabold text-[#0A2249]">{item.title}</p>
+                <p className="text-sm text-slate-500 mt-1">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CALL TO ACTION */}
-      <section className="py-20 bg-white border-t border-slate-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-3xl font-bold text-[#0A2249] mb-6">
-            Ready to partner with us for your school?
-          </h3>
-          <p className="text-slate-600 mb-8 text-lg">
-            Contact us today to request samples, discuss bulk orders, or learn more about what we
-            offer.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="inline-block bg-[#D39B36] hover:bg-[#b8852d] text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 text-lg"
-            >
-              Contact Us Now
-            </Link>
-            <Link
-              href="/products"
-              className="inline-block bg-[#0A2249] hover:bg-[#071836] text-white font-bold py-3 px-8 rounded-full shadow-md transition duration-300 text-lg"
-            >
-              View Our Products
-            </Link>
-          </div>
-        </div>
-      </section>
-
+    
       {/* FOOTER */}
-      <footer className="bg-[#051329] py-8 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
-          <p>&copy; {new Date().getFullYear()} V V Learning House. All Rights Reserved.</p>
-          <p className="mt-2 md:mt-0">A BioFuture Life Sciences Brand</p>
-        </div>
-      </footer>
+
     </div>
   );
 }
